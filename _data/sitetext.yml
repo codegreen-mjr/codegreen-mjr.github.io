@@ -18,19 +18,19 @@ en: &DEFAULT_EN
     buttonlink: "#services"
 
   services:
-    title: "Our Projects"
-    text: "Check out everything!"
-    section: services
+    title: "Our Process"
+    text: "Our three step process"
+    section: Process
     list:
-      - title: "E-waste Non-Profit (CodeGreen)"
+      - title: "Collecting"
         desc: "Code Green is a Mississauga-based non-profit dedicated to environmental sustainability, offering free collection of e-waste from local schools and students for responsible recycling or strategic refurbishment."
-        icon: fa-solid fa-school #find more at https://fontawesome.com/icons
-      - title: "Startup Study App"
-        desc: "A new and improved way to study through the use of competitveness (Coming Soon...)"
-        icon: fas fa-book
-      - title: "Website Development"
-        desc: "Your on our offical website right now!"
-        icon: fas fa-code
+        icon: fas fa-school #find more at https://fontawesome.com/icons
+      - title: "Distributing"
+        desc: "After collecting from schools we give the e-waste to local e-waste centers for a small sum"
+        icon: fas fa-microchip
+      - title: "Donating"
+        desc: "All revenue made by Code Green will be donated to charity"
+        icon: fas fa-hand-holding-heart
 
   portfolio:
     title: "Partnered Schools (Coming Soon...)"

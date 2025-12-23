@@ -14,11 +14,11 @@
 #theme: jekyll-agency
 remote_theme: raviriley/agency-jekyll-theme
 
-url    : "MJR-Projects.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url    : "codegreen-mjr.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: "" # the subpath of your site, e.g. /blog
 
-title      : MJR Projects
-email      : everything.mjr@gmail.com #this is also the email contact forms will go to
+title      : Code Green
+email      : codegreen.mjr@gmail.com #this is also the email contact forms will go to
 description: "Agency Bootstrap theme converted to a Jekyll theme, plus new features: Google Analytics, Markdown support, custom pages, and more!"
 author     : MJR
 

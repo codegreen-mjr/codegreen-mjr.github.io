@@ -23,31 +23,32 @@ footer {
   color: #1b4332 !important;
 }
 
-/* --- DARK MODE (TECH-GRAY TEXT FIX) --- */
+/* --- DARK MODE (SPECIFIC TEXT FLIP) --- */
 body.dark-mode,
 body.dark-mode section,
 body.dark-mode .bg-white,
-body.dark-mode .bg-light,
-body.dark-mode div[class*="bg-"] {
+body.dark-mode .bg-light {
   background-color: #121212 !important;
 }
 
-/* Using Gray instead of White for a better look */
+/* Only flip the Main Text and Headings to White */
 body.dark-mode h1, 
 body.dark-mode h2, 
 body.dark-mode h3, 
 body.dark-mode h4, 
 body.dark-mode h5, 
-body.dark-mode h6 {
-  color: #d1d1d1 !important; /* Silver/Light Gray */
+body.dark-mode h6,
+body.dark-mode p {
+  color: #ffffff !important;
 }
 
-body.dark-mode p, 
-body.dark-mode span, 
-body.dark-mode a:not(.btn), 
-body.dark-mode li,
-body.dark-mode div:not(.portfolio-caption) {
-  color: #b0b0b0 !important; /* Tech Gray */
+/* We EXCLUDE the "text-muted" or "text-secondary" classes.
+   This ensures that if your template uses gray text classes, 
+   they stay gray and don't get forced to white.
+*/
+body.dark-mode .text-muted, 
+body.dark-mode .text-secondary {
+  /* No color change here so they stay gray */
 }
 
 /* --- NAVBAR (CONSTANT DARK & TRANSPARENT) --- */
@@ -55,19 +56,12 @@ body.dark-mode div:not(.portfolio-caption) {
   background: transparent !important;
 }
 
-/* Navbar text stays White/Light Gray for contrast against black scroll */
 .navbar .nav-link, 
 .navbar-brand {
-  color: #e0e0e0 !important;
+  color: #ffffff !important;
 }
 
 .navbar.scrolled {
   background: #000000 !important;
   backdrop-filter: blur(8px);
-}
-
-/* Portfolio boxes in Dark Mode */
-body.dark-mode .portfolio-caption {
-  background-color: #2a2a2a !important;
-  border-color: #3a3a3a !important;
 }

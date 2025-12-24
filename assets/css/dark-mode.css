@@ -5,28 +5,30 @@ body, body * {
 
 /* --- LIGHT MODE (E-WASTE THEME) --- */
 
-/* This replaces your "Off-White" with a Very Light Mint */
-body {
+/* Shade 1: The "Off-White" replacement (Very Light Mint) */
+body, .bg-light {
   background-color: #f1f8e9 !important; 
-  color: #212121;
+  color: #212121 !important;
 }
 
-/* This replaces your "White" sections with a Stronger Green */
-section {
+/* Shade 2: The "Pure White" replacement (Noticeable Earthy Green) */
+section, .bg-white, .bg-first {
   background-color: #c5e1a5 !important; 
   color: #212121 !important;
 }
 
-/* Footer (Darker Green) */
+/* Footer (Darkest Eco Green) */
 footer {
   background-color: #9ccc65 !important;
   color: #1b5e20 !important;
 }
 
 /* --- DARK MODE (STAYS BLACK) --- */
-body.dark-mode {
-  background-color: #121212;
-  color: #e0e0e0;
+body.dark-mode, 
+body.dark-mode .bg-light, 
+body.dark-mode .bg-white {
+  background-color: #121212 !important;
+  color: #e0e0e0 !important;
 }
 
 body.dark-mode h1,
@@ -35,7 +37,7 @@ body.dark-mode h3,
 body.dark-mode h4,
 body.dark-mode h5,
 body.dark-mode h6 {
-  color: #ffffff;
+  color: #ffffff !important;
 }
 
 body.dark-mode footer,
@@ -44,21 +46,23 @@ body.dark-mode section {
   color: #e0e0e0 !important;
 }
 
-/* --- NAVBAR LOGIC (CONSTANT & TRANSPARENT AT TOP) --- */
+/* --- NAVBAR LOGIC (CONSTANT DARK & TRANSPARENT) --- */
 
 .navbar {
-  background: transparent !important; /* Transparent at the top */
+  background: transparent !important; 
   transition: background 0.3s ease, backdrop-filter 0.3s ease;
 }
 
-/* Navbar text is ALWAYS White/Light (Fixed the green text issue) */
+/* Navbar text stays White/Light always */
 .navbar .nav-link, 
 .navbar-brand,
+.navbar .navbar-toggler-icon,
 body.dark-mode .navbar .nav-link {
   color: #ffffff !important;
+  filter: brightness(0) invert(1); /* Ensures the 'hamburger' icon is white too */
 }
 
-/* Navbar turns Black only when scrolled */
+/* Navbar background ONLY when scrolled */
 .navbar.scrolled {
   background: rgba(0, 0, 0, 0.9) !important;
   backdrop-filter: saturate(120%) blur(6px);

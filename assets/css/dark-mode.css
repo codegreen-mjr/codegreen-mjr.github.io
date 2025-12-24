@@ -5,77 +5,69 @@ body, body * {
 
 /* --- LIGHT MODE (E-WASTE THEME) --- */
 
-/* Base Background: Very Light "Mint" (The off-white replacement) */
-body, 
-.bg-light {
-  background-color: #f8faf5 !important; /* Almost white, but with a hint of green */
-  color: #212529 !important;
+/* Shade 1: Very Light Mint (Body/Off-white areas) */
+body {
+  background-color: #f1f8e9; 
+  color: #212121;
 }
 
-/* Sections: "Sage Green" (The pure white replacement) */
-/* This creates the "looking good" contrast you need */
-section, 
-.bg-white, 
-.page-section,
-#about, 
-#services, 
-#portfolio,
-#contact {
-  background-color: #e1ecd1 !important; /* Noticeable but soft green */
+/* Shade 2: Earthy Green (Section/White areas) */
+section, .bg-white {
+  background-color: #c5e1a5 !important;
+  color: #212121 !important;
+}
+
+footer {
+  background-color: #9ccc65 !important;
   color: #1b5e20 !important;
 }
 
-/* Footer: Darker "Forest" Green */
-footer {
-  background-color: #2e7d32 !important;
-  color: #ffffff !important;
-}
+/* --- DARK MODE (RESTORED LOGIC) --- */
+/* We use body.dark-mode to ensure these override the light greens */
 
-/* --- DARK MODE (STAYS BLACK) --- */
-body.dark-mode, 
-body.dark-mode section, 
-body.dark-mode .bg-light, 
-body.dark-mode .bg-white {
+body.dark-mode {
   background-color: #121212 !important;
   color: #e0e0e0 !important;
 }
 
-body.dark-mode h1, 
-body.dark-mode h2, 
-body.dark-mode h3 {
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
   color: #ffffff !important;
+}
+
+body.dark-mode footer,
+body.dark-mode section,
+body.dark-mode .bg-white {
+  background-color: #1e1e1e !important;
+  color: #e0e0e0 !important;
 }
 
 /* --- NAVBAR (CONSTANT DARK & TRANSPARENT AT TOP) --- */
 
-/* Reset navbar to be transparent at top */
 .navbar {
   background: transparent !important;
+  transition: background 0.3s ease, backdrop-filter 0.3s ease;
 }
 
-/* Navbar text/links ALWAYS Light Gray/White */
+/* Navbar text stays White/Light Gray always */
 .navbar .nav-link, 
-.navbar-brand,
-#mainNav .navbar-brand,
-#mainNav .nav-link {
-  color: rgba(255, 255, 255, 0.8) !important;
+.navbar-brand {
+  color: rgba(255, 255, 255, 0.9) !important;
 }
 
-/* Hover color for navbar */
-.navbar .nav-link:hover {
-  color: #ffffff !important;
+/* Navbar turns Black only when scrolled */
+.navbar.scrolled {
+  background: rgba(0, 0, 0, 0.95) !important;
+  backdrop-filter: saturate(120%) blur(6px);
 }
 
-/* Navbar turns Dark Gray/Black when scrolled */
-.navbar.scrolled, 
-#mainNav.navbar-shrink {
-  background-color: #1a1a1a !important;
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid #333;
-}
-
-/* Portfolio boxes in Dark Mode */
+/* Portfolio / project boxes in dark mode */
 body.dark-mode .portfolio-caption {
   background-color: #2a2a2a !important;
+  color: #e0e0e0 !important;
   border-color: #3a3a3a !important;
 }

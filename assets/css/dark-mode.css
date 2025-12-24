@@ -3,27 +3,28 @@ body, body * {
   transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-/* --- LIGHT MODE (TWO-TONE GREEN THEME) --- */
+/* --- LIGHT MODE (CLEAN ECO-THEME) --- */
 
-/* Shade 1: Dark Forest Green (Main Background) */
+/* Shade 1: Deep Teal-Green (Main Background) */
 body, .bg-light {
-  background-color: #1b3d2f !important; 
+  background-color: #1a3a32 !important; 
   color: #ffffff !important;
 }
 
-/* Shade 2: Deep Moss Green (Sections / "White" areas) */
+/* Shade 2: Fresh Forest Green (Sections / "White" areas) */
+/* This is slightly "brighter" than the body so it pops */
 section, .bg-white, .page-section {
-  background-color: #2e5a43 !important; 
+  background-color: #245045 !important; 
   color: #ffffff !important;
 }
 
-/* Headings in Light Mode */
+/* Headings */
 h1, h2, h3, h4, h5, h6 {
   color: #ffffff !important;
 }
 
 footer {
-  background-color: #142d22 !important;
+  background-color: #132b25 !important; /* Darkest for the bottom */
   color: #ffffff !important;
 }
 
@@ -53,7 +54,7 @@ body.dark-mode h1, body.dark-mode h2, body.dark-mode h3 {
   color: #ffffff !important;
 }
 
-/* Navbar turns Black when scrolled */
+/* Navbar background ONLY when scrolled */
 .navbar.scrolled {
   background: #000000 !important;
   backdrop-filter: blur(8px);

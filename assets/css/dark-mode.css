@@ -3,36 +3,31 @@ body, body * {
   transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-/* --- LIGHT MODE (CLEAN TECH-GREEN THEME) --- */
+/* --- LIGHT MODE (FRESH & READABLE) --- */
 
-/* Shade 1: Deep Emerald (The "Off-White" / Body replacement) */
-body {
-  background-color: #2d5a4c !important; 
-  color: #ffffff !important;
+/* Shade 1: Pale Mint (Main Background / "Off-White" areas) */
+body, .bg-light {
+  background-color: #f1f9f1 !important; 
+  color: #1b4332 !important; /* Dense, dark green text */
 }
 
-/* Shade 2: Clean Pine (The "White" / Section replacement) */
-/* This is slightly darker/richer so you get that two-tone look */
+/* Shade 2: Soft Sage (Sections / "White" areas) */
 section, 
 .bg-white, 
 .page-section,
 div[class*="bg-white"] {
-  background-color: #1e3f35 !important; 
-  color: #ffffff !important;
+  background-color: #d8f3dc !important; 
+  color: #1b4332 !important; /* Dense, dark green text */
 }
 
-/* Ensure all text headers and paragraphs are Pure White */
-body:not(.dark-mode) h1, 
-body:not(.dark-mode) h2, 
-body:not(.dark-mode) h3, 
-body:not(.dark-mode) h4, 
-body:not(.dark-mode) p,
-body:not(.dark-mode) .nav-link {
-  color: #ffffff !important;
+/* Headings - Using the most dense green for contrast */
+h1, h2, h3, h4, h5, h6 {
+  color: #081c15 !important;
 }
 
 footer {
-  background-color: #142b24 !important;
+  background-color: #b7e4c7 !important;
+  color: #1b4332 !important;
 }
 
 /* --- DARK MODE (STAYS BLACK) --- */
@@ -45,20 +40,23 @@ body.dark-mode .bg-light {
   color: #e0e0e0 !important;
 }
 
+body.dark-mode h1, body.dark-mode h2, body.dark-mode h3 {
+  color: #ffffff !important;
+}
+
 /* --- NAVBAR (CONSTANT DARK & TRANSPARENT AT TOP) --- */
 
 .navbar {
   background: transparent !important;
-  transition: background 0.3s ease;
 }
 
-/* Navbar text stays White */
+/* Navbar text stays White (to contrast against the black bar/scrolled state) */
 .navbar .nav-link, 
 .navbar-brand {
   color: #ffffff !important;
 }
 
-/* Navbar turns Black only when scrolled */
+/* Navbar background ONLY when scrolled */
 .navbar.scrolled {
   background: #000000 !important;
   backdrop-filter: blur(8px);

@@ -3,40 +3,37 @@ body, body * {
   transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-/* --- LIGHT MODE (TWO-TONE GREEN) --- */
+/* --- LIGHT MODE (TWO-TONE GREEN THEME) --- */
 
-/* Shade 1: Very Light Mint (Replaces the "Off-White" / Body) */
+/* Shade 1: Dark Forest Green (Main Background) */
 body, .bg-light {
-  background-color: #f1f8e9 !important; 
-  color: #212121 !important;
+  background-color: #1b3d2f !important; 
+  color: #ffffff !important;
 }
 
-/* Shade 2: Muted Forest Green (Replaces the "Pure White" / Sections) */
-/* We target 'section' and 'bg-white' with a darker shade for contrast */
+/* Shade 2: Deep Moss Green (Sections / "White" areas) */
 section, .bg-white, .page-section {
-  background-color: #c5e1a5 !important; 
-  color: #1b5e20 !important;
+  background-color: #2e5a43 !important; 
+  color: #ffffff !important;
 }
 
-/* Footer (Darkest Shade) */
+/* Headings in Light Mode */
+h1, h2, h3, h4, h5, h6 {
+  color: #ffffff !important;
+}
+
 footer {
-  background-color: #9ccc65 !important;
-  color: #1b5e20 !important;
+  background-color: #142d22 !important;
+  color: #ffffff !important;
 }
 
-/* --- DARK MODE (STAYS BLACK/DARK GRAY) --- */
+/* --- DARK MODE (STAYS BLACK) --- */
 
-body.dark-mode {
+body.dark-mode,
+body.dark-mode section,
+body.dark-mode .bg-white,
+body.dark-mode .bg-light {
   background-color: #121212 !important;
-  color: #e0e0e0 !important;
-}
-
-/* This forces the green sections to turn dark when toggled */
-body.dark-mode section, 
-body.dark-mode .bg-white, 
-body.dark-mode .bg-light,
-body.dark-mode .page-section {
-  background-color: #1e1e1e !important;
   color: #e0e0e0 !important;
 }
 
@@ -44,23 +41,22 @@ body.dark-mode h1, body.dark-mode h2, body.dark-mode h3 {
   color: #ffffff !important;
 }
 
-/* --- NAVBAR (CONSTANT DARK & TRANSPARENT AT TOP) --- */
+/* --- NAVBAR (CONSTANT DARK & TRANSPARENT) --- */
 
 .navbar {
   background: transparent !important;
-  transition: background 0.3s ease;
 }
 
-/* Navbar text stays White/Light Gray always */
+/* Navbar text stays White always */
 .navbar .nav-link, 
 .navbar-brand {
-  color: rgba(255, 255, 255, 0.9) !important;
+  color: #ffffff !important;
 }
 
-/* Navbar background ONLY when scrolled */
+/* Navbar turns Black when scrolled */
 .navbar.scrolled {
-  background: #1a1a1a !important;
-  backdrop-filter: saturate(120%) blur(6px);
+  background: #000000 !important;
+  backdrop-filter: blur(8px);
 }
 
 /* Portfolio boxes in Dark Mode */

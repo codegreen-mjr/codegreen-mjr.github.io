@@ -1,15 +1,17 @@
+/* --- ECO GREEN THEME --- */
+
 /* Smooth transition for everything */
 body, body * {
   transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-/* General dark mode styles */
+/* The main background (Dark Forest Green) */
 body.dark-mode {
-  background-color: #026928;
-  color: #ffffff;
+  background-color: #0a2e12; 
+  color: #e0f2f1;
 }
 
-/* Headings */
+/* Headings (Crisp White) */
 body.dark-mode h1,
 body.dark-mode h2,
 body.dark-mode h3,
@@ -19,35 +21,31 @@ body.dark-mode h6 {
   color: #ffffff;
 }
 
-/* Footer and sections only (leave navbar unchanged) */
+/* Sections and Footer (Slightly lighter Green) */
 body.dark-mode footer,
 body.dark-mode section {
-  background-color: #1e1e1e !important;
-  color: #e0e0e0 !important;
+  background-color: #11421a !important;
+  color: #e0f2f1 !important;
 }
 
-/* Navbar color in dark mode */
+/* Navbar (Transparent at top) */
 body.dark-mode .navbar {
-  background: transparent !important; /* allow transparency at top */
-  color: inherit !important;
-  transition: background 0.3s ease, backdrop-filter 0.3s ease;
+  background: transparent !important;
+  color: #ffffff !important;
 }
 
-/* Solid background when scrolled */
+/* Navbar when you scroll down */
 body.dark-mode .navbar.scrolled {
-  background: rgba(0, 0, 0, 0.85) !important;
-  backdrop-filter: saturate(120%) blur(6px);
+  background: rgba(10, 46, 18, 0.9) !important; /* Matches background */
+  backdrop-filter: blur(6px);
 }
 
-
-
-/* Portfolio / project boxes */
+/* Project/Portfolio Boxes */
 body.dark-mode .portfolio-caption {
-  background-color: #2a2a2a !important; /* dark gray, stands out from background */
-  color: #e0e0e0 !important;           /* readable text */
-  border-color: #3a3a3a !important;     /* slightly lighter border for contrast */
+  background-color: #1b4d26 !important; /* Moss Green */
+  color: #ffffff !important;
+  border-color: #2e7d32 !important;
 }
-
 
 /* === NAVBAR TRANSPARENCY FIX === */
 .navbar {

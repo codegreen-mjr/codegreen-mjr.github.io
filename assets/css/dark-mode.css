@@ -5,20 +5,21 @@ body, body * {
 
 /* --- LIGHT MODE (E-WASTE THEME) --- */
 
-/* Main Background (The lighter "off-white" areas) */
+/* This replaces your "Off-White" with a Very Light Mint */
 body {
-  background-color: #f1f8e9 !important; /* Very faint mint/white */
+  background-color: #f1f8e9 !important; 
   color: #212121;
 }
 
-/* The darker sections (The "white" areas now more Green) */
+/* This replaces your "White" sections with a Stronger Green */
 section {
-  background-color: #dcedc8 !important; /* Distinctly Green */
+  background-color: #c5e1a5 !important; 
   color: #212121 !important;
 }
 
+/* Footer (Darker Green) */
 footer {
-  background-color: #c5e1a5 !important; /* Darkest green for the bottom */
+  background-color: #9ccc65 !important;
   color: #1b5e20 !important;
 }
 
@@ -43,26 +44,24 @@ body.dark-mode section {
   color: #e0e0e0 !important;
 }
 
-/* --- NAVBAR LOGIC (FIXED) --- */
+/* --- NAVBAR LOGIC (CONSTANT & TRANSPARENT AT TOP) --- */
 
-/* Keep it transparent at the top always */
 .navbar {
-  background: transparent !important;
+  background: transparent !important; /* Transparent at the top */
   transition: background 0.3s ease, backdrop-filter 0.3s ease;
 }
 
-/* Force it to Black ONLY when scrolled */
+/* Navbar text is ALWAYS White/Light (Fixed the green text issue) */
+.navbar .nav-link, 
+.navbar-brand,
+body.dark-mode .navbar .nav-link {
+  color: #ffffff !important;
+}
+
+/* Navbar turns Black only when scrolled */
 .navbar.scrolled {
   background: rgba(0, 0, 0, 0.9) !important;
   backdrop-filter: saturate(120%) blur(6px);
-}
-
-/* Ensure navbar text is readable against the green/black */
-.navbar .nav-link {
-  color: #1b5e20 !important; /* Dark Green text for light mode */
-}
-body.dark-mode .navbar .nav-link {
-  color: #ffffff !important; /* White text for dark mode */
 }
 
 /* Portfolio / project boxes */

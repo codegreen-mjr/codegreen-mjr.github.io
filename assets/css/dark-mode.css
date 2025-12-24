@@ -5,59 +5,55 @@ body, body * {
 
 /* --- LIGHT MODE (E-WASTE THEME) --- */
 
-/* Shade 1: The "Off-White" / Main Body */
+/* Base Background: Very Light "Mint" (The off-white replacement) */
 body, 
-.bg-light, 
-#mainNav.navbar-shrink {
-  background-color: #f1f8e9 !important; 
-  color: #212121 !important;
+.bg-light {
+  background-color: #f8faf5 !important; /* Almost white, but with a hint of green */
+  color: #212529 !important;
 }
 
-/* Shade 2: The "Pure White" / Targeted Sections */
-/* This targets sections, divs, and common Bootstrap classes */
+/* Sections: "Sage Green" (The pure white replacement) */
+/* This creates the "looking good" contrast you need */
 section, 
-div.bg-white, 
+.bg-white, 
 .page-section,
 #about, 
 #services, 
-#portfolio {
-  background-color: #c5e1a5 !important; 
-  color: #212121 !important;
+#portfolio,
+#contact {
+  background-color: #e1ecd1 !important; /* Noticeable but soft green */
+  color: #1b5e20 !important;
 }
 
-/* Footer (Darkest Eco Green) */
+/* Footer: Darker "Forest" Green */
 footer {
-  background-color: #9ccc65 !important;
-  color: #1b5e20 !important;
+  background-color: #2e7d32 !important;
+  color: #ffffff !important;
 }
 
 /* --- DARK MODE (STAYS BLACK) --- */
 body.dark-mode, 
 body.dark-mode section, 
 body.dark-mode .bg-light, 
-body.dark-mode .bg-white,
-body.dark-mode #about,
-body.dark-mode #services {
+body.dark-mode .bg-white {
   background-color: #121212 !important;
   color: #e0e0e0 !important;
 }
 
-body.dark-mode h1,
-body.dark-mode h2,
-body.dark-mode h3,
-body.dark-mode h4,
-body.dark-mode h5,
-body.dark-mode h6 {
+body.dark-mode h1, 
+body.dark-mode h2, 
+body.dark-mode h3 {
   color: #ffffff !important;
 }
 
-/* --- NAVBAR (CONSTANT DARK & TRANSPARENT) --- */
+/* --- NAVBAR (CONSTANT DARK & TRANSPARENT AT TOP) --- */
 
+/* Reset navbar to be transparent at top */
 .navbar {
-  background: transparent !important; 
+  background: transparent !important;
 }
 
-/* Navbar text & branding ALWAYS White/Gray */
+/* Navbar text/links ALWAYS Light Gray/White */
 .navbar .nav-link, 
 .navbar-brand,
 #mainNav .navbar-brand,
@@ -65,19 +61,20 @@ body.dark-mode h6 {
   color: rgba(255, 255, 255, 0.8) !important;
 }
 
-/* Hover effect for navbar links */
+/* Hover color for navbar */
 .navbar .nav-link:hover {
   color: #ffffff !important;
 }
 
-/* Navbar background ONLY when scrolled */
+/* Navbar turns Dark Gray/Black when scrolled */
 .navbar.scrolled, 
 #mainNav.navbar-shrink {
   background-color: #1a1a1a !important;
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #333;
 }
 
-/* Portfolio / project boxes in dark mode */
+/* Portfolio boxes in Dark Mode */
 body.dark-mode .portfolio-caption {
   background-color: #2a2a2a !important;
   border-color: #3a3a3a !important;

@@ -23,29 +23,31 @@ footer {
   color: #1b4332 !important;
 }
 
-/* --- DARK MODE (FORCED TEXT FIX) --- */
+/* --- DARK MODE (TECH-GRAY TEXT FIX) --- */
 body.dark-mode,
 body.dark-mode section,
 body.dark-mode .bg-white,
 body.dark-mode .bg-light,
 body.dark-mode div[class*="bg-"] {
   background-color: #121212 !important;
-  color: #e0e0e0 !important;
 }
 
-/* Aggressive fix for stubborn text in Dark Mode */
+/* Using Gray instead of White for a better look */
 body.dark-mode h1, 
 body.dark-mode h2, 
 body.dark-mode h3, 
 body.dark-mode h4, 
 body.dark-mode h5, 
-body.dark-mode h6,
+body.dark-mode h6 {
+  color: #d1d1d1 !important; /* Silver/Light Gray */
+}
+
 body.dark-mode p, 
 body.dark-mode span, 
 body.dark-mode a:not(.btn), 
 body.dark-mode li,
 body.dark-mode div:not(.portfolio-caption) {
-  color: #ffffff !important;
+  color: #b0b0b0 !important; /* Tech Gray */
 }
 
 /* --- NAVBAR (CONSTANT DARK & TRANSPARENT) --- */
@@ -53,9 +55,10 @@ body.dark-mode div:not(.portfolio-caption) {
   background: transparent !important;
 }
 
+/* Navbar text stays White/Light Gray for contrast against black scroll */
 .navbar .nav-link, 
 .navbar-brand {
-  color: #ffffff !important;
+  color: #e0e0e0 !important;
 }
 
 .navbar.scrolled {

@@ -5,14 +5,22 @@ body, body * {
 
 /* --- LIGHT MODE (E-WASTE THEME) --- */
 
-/* Shade 1: The "Off-White" replacement (Very Light Mint) */
-body, .bg-light {
+/* Shade 1: The "Off-White" / Main Body */
+body, 
+.bg-light, 
+#mainNav.navbar-shrink {
   background-color: #f1f8e9 !important; 
   color: #212121 !important;
 }
 
-/* Shade 2: The "Pure White" replacement (Noticeable Earthy Green) */
-section, .bg-white, .bg-first {
+/* Shade 2: The "Pure White" / Targeted Sections */
+/* This targets sections, divs, and common Bootstrap classes */
+section, 
+div.bg-white, 
+.page-section,
+#about, 
+#services, 
+#portfolio {
   background-color: #c5e1a5 !important; 
   color: #212121 !important;
 }
@@ -25,8 +33,11 @@ footer {
 
 /* --- DARK MODE (STAYS BLACK) --- */
 body.dark-mode, 
+body.dark-mode section, 
 body.dark-mode .bg-light, 
-body.dark-mode .bg-white {
+body.dark-mode .bg-white,
+body.dark-mode #about,
+body.dark-mode #services {
   background-color: #121212 !important;
   color: #e0e0e0 !important;
 }
@@ -40,37 +51,34 @@ body.dark-mode h6 {
   color: #ffffff !important;
 }
 
-body.dark-mode footer,
-body.dark-mode section {
-  background-color: #1e1e1e !important;
-  color: #e0e0e0 !important;
-}
-
-/* --- NAVBAR LOGIC (CONSTANT DARK & TRANSPARENT) --- */
+/* --- NAVBAR (CONSTANT DARK & TRANSPARENT) --- */
 
 .navbar {
   background: transparent !important; 
-  transition: background 0.3s ease, backdrop-filter 0.3s ease;
 }
 
-/* Navbar text stays White/Light always */
+/* Navbar text & branding ALWAYS White/Gray */
 .navbar .nav-link, 
 .navbar-brand,
-.navbar .navbar-toggler-icon,
-body.dark-mode .navbar .nav-link {
+#mainNav .navbar-brand,
+#mainNav .nav-link {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Hover effect for navbar links */
+.navbar .nav-link:hover {
   color: #ffffff !important;
-  filter: brightness(0) invert(1); /* Ensures the 'hamburger' icon is white too */
 }
 
 /* Navbar background ONLY when scrolled */
-.navbar.scrolled {
-  background: rgba(0, 0, 0, 0.9) !important;
-  backdrop-filter: saturate(120%) blur(6px);
+.navbar.scrolled, 
+#mainNav.navbar-shrink {
+  background-color: #1a1a1a !important;
+  backdrop-filter: blur(6px);
 }
 
-/* Portfolio / project boxes */
+/* Portfolio / project boxes in dark mode */
 body.dark-mode .portfolio-caption {
   background-color: #2a2a2a !important;
-  color: #e0e0e0 !important;
   border-color: #3a3a3a !important;
 }

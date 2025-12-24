@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
     logo.alt = "Site Logo";
 
     logo.addEventListener("click", () => {
-      window.location.href = "https://mjr-projects.github.io/";
+      window.location.href = "https://codegreen-mjr.github.io/";
     });
 
     Object.assign(logo.style, {

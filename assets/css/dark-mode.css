@@ -5,8 +5,8 @@ body, body * {
 
 /* General dark mode styles */
 body.dark-mode {
-  background-color: #121212;
-  color: #e0e0e0;
+  background-color: #026928;
+  color: #ffffff;
 }
 
 /* Headings */

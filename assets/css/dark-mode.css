@@ -3,47 +3,44 @@ body, body * {
   transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-/* --- LIGHT MODE (E-WASTE THEME) --- */
+/* --- LIGHT MODE (TWO-TONE GREEN) --- */
 
-/* Shade 1: Very Light Mint (The background/off-white areas) */
-body {
-  background-color: #f1f7e9 !important; 
+/* Shade 1: Very Light Mint (Replaces the "Off-White" / Body) */
+body, .bg-light {
+  background-color: #f1f8e9 !important; 
   color: #212121 !important;
 }
 
-/* Shade 2: Muted Earthy Green (This forces ALL sections and divs to be green) */
-section, 
-div[class*="bg-"], 
-.page-section, 
-.bg-white, 
-.bg-light {
-  background-color: #d8e6c3 !important;
-  color: #212121 !important;
+/* Shade 2: Muted Forest Green (Replaces the "Pure White" / Sections) */
+/* We target 'section' and 'bg-white' with a darker shade for contrast */
+section, .bg-white, .page-section {
+  background-color: #c5e1a5 !important; 
+  color: #1b5e20 !important;
 }
 
+/* Footer (Darkest Shade) */
 footer {
   background-color: #9ccc65 !important;
   color: #1b5e20 !important;
 }
 
-/* --- DARK MODE (STAYS BLACK) --- */
+/* --- DARK MODE (STAYS BLACK/DARK GRAY) --- */
 
-body.dark-mode,
-body.dark-mode section,
-body.dark-mode div[class*="bg-"],
-body.dark-mode .page-section,
-body.dark-mode .bg-white,
-body.dark-mode .bg-light {
+body.dark-mode {
   background-color: #121212 !important;
   color: #e0e0e0 !important;
 }
 
-body.dark-mode h1,
-body.dark-mode h2,
-body.dark-mode h3,
-body.dark-mode h4,
-body.dark-mode h5,
-body.dark-mode h6 {
+/* This forces the green sections to turn dark when toggled */
+body.dark-mode section, 
+body.dark-mode .bg-white, 
+body.dark-mode .bg-light,
+body.dark-mode .page-section {
+  background-color: #1e1e1e !important;
+  color: #e0e0e0 !important;
+}
+
+body.dark-mode h1, body.dark-mode h2, body.dark-mode h3 {
   color: #ffffff !important;
 }
 
@@ -51,10 +48,10 @@ body.dark-mode h6 {
 
 .navbar {
   background: transparent !important;
-  transition: background 0.3s ease, backdrop-filter 0.3s ease;
+  transition: background 0.3s ease;
 }
 
-/* Navbar text stays White/Light Gray regardless of mode */
+/* Navbar text stays White/Light Gray always */
 .navbar .nav-link, 
 .navbar-brand {
   color: rgba(255, 255, 255, 0.9) !important;
@@ -62,13 +59,12 @@ body.dark-mode h6 {
 
 /* Navbar background ONLY when scrolled */
 .navbar.scrolled {
-  background: rgba(0, 0, 0, 0.95) !important;
+  background: #1a1a1a !important;
   backdrop-filter: saturate(120%) blur(6px);
 }
 
-/* Portfolio / project boxes */
+/* Portfolio boxes in Dark Mode */
 body.dark-mode .portfolio-caption {
   background-color: #2a2a2a !important;
-  color: #e0e0e0 !important;
   border-color: #3a3a3a !important;
 }

@@ -4,23 +4,16 @@ body, body * {
 }
 
 /* --- LIGHT MODE (FRESH & READABLE) --- */
-
-/* Shade 1: Pale Mint (Main Background / "Off-White" areas) */
 body, .bg-light {
   background-color: #f1f9f1 !important; 
-  color: #1b4332 !important; /* Dense, dark green text */
+  color: #1b4332 !important; 
 }
 
-/* Shade 2: Soft Sage (Sections / "White" areas) */
-section, 
-.bg-white, 
-.page-section,
-div[class*="bg-white"] {
+section, .bg-white, .page-section, div[class*="bg-white"] {
   background-color: #d8f3dc !important; 
-  color: #1b4332 !important; /* Dense, dark green text */
+  color: #1b4332 !important; 
 }
 
-/* Headings - Using the most dense green for contrast */
 h1, h2, h3, h4, h5, h6 {
   color: #081c15 !important;
 }
@@ -30,34 +23,48 @@ footer {
   color: #1b4332 !important;
 }
 
-/* --- DARK MODE (STAYS BLACK) --- */
-
+/* --- DARK MODE (FORCED TEXT FIX) --- */
 body.dark-mode,
 body.dark-mode section,
 body.dark-mode .bg-white,
-body.dark-mode .bg-light {
+body.dark-mode .bg-light,
+body.dark-mode div[class*="bg-"] {
   background-color: #121212 !important;
   color: #e0e0e0 !important;
 }
 
-body.dark-mode h1, body.dark-mode h2, body.dark-mode h3 {
+/* Aggressive fix for stubborn text in Dark Mode */
+body.dark-mode h1, 
+body.dark-mode h2, 
+body.dark-mode h3, 
+body.dark-mode h4, 
+body.dark-mode h5, 
+body.dark-mode h6,
+body.dark-mode p, 
+body.dark-mode span, 
+body.dark-mode a:not(.btn), 
+body.dark-mode li,
+body.dark-mode div:not(.portfolio-caption) {
   color: #ffffff !important;
 }
 
-/* --- NAVBAR (CONSTANT DARK & TRANSPARENT AT TOP) --- */
-
+/* --- NAVBAR (CONSTANT DARK & TRANSPARENT) --- */
 .navbar {
   background: transparent !important;
 }
 
-/* Navbar text stays White (to contrast against the black bar/scrolled state) */
 .navbar .nav-link, 
 .navbar-brand {
   color: #ffffff !important;
 }
 
-/* Navbar background ONLY when scrolled */
 .navbar.scrolled {
   background: #000000 !important;
   backdrop-filter: blur(8px);
+}
+
+/* Portfolio boxes in Dark Mode */
+body.dark-mode .portfolio-caption {
+  background-color: #2a2a2a !important;
+  border-color: #3a3a3a !important;
 }

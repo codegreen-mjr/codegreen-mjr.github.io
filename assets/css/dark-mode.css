@@ -3,28 +3,31 @@ body, body * {
   transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-/* --- LIGHT MODE (CLEAN & BRIGHT ECO-THEME) --- */
+/* --- LIGHT MODE (BRIGHT ECO THEME) --- */
 
-/* Shade 1: Very Light Mint Green (Main Background) */
-body {
-  background-color: #f1f8e9 !important; 
-  color: #1b5e20 !important; /* Dark green text for readability */
+/* Shade 1: Light Seafoam (Body/Off-White areas) */
+body, .bg-light {
+  background-color: #4caf50 !important; 
+  color: #ffffff !important;
 }
 
-/* Shade 2: Bright Leaf Green (Sections) */
-/* This targets sections and common white background classes */
+/* Shade 2: Grass Green (Sections/White areas) */
+/* This shade is slightly darker so you can see the difference */
 section, 
 .bg-white, 
 .page-section,
-div[id="about"], 
-div[id="services"] {
-  background-color: #c5e1a5 !important; 
-  color: #1b5e20 !important;
+div[class*="bg-white"] {
+  background-color: #388e3c !important; 
+  color: #ffffff !important;
 }
 
-/* Footer (Stronger Green) */
+/* Force all text inside these sections to be white */
+body h1, body h2, body h3, body h4, body p, body span, body div {
+  color: #ffffff !important;
+}
+
 footer {
-  background-color: #9ccc65 !important;
+  background-color: #2e7d32 !important;
   color: #ffffff !important;
 }
 
@@ -38,7 +41,7 @@ body.dark-mode .bg-light {
   color: #e0e0e0 !important;
 }
 
-body.dark-mode h1, body.dark-mode h2, body.dark-mode h3 {
+body.dark-mode h1, body.dark-mode h2, body.dark-mode h3, body.dark-mode p {
   color: #ffffff !important;
 }
 
@@ -58,10 +61,4 @@ body.dark-mode h1, body.dark-mode h2, body.dark-mode h3 {
 .navbar.scrolled {
   background: #000000 !important;
   backdrop-filter: blur(8px);
-}
-
-/* Portfolio boxes in Dark Mode */
-body.dark-mode .portfolio-caption {
-  background-color: #2a2a2a !important;
-  border-color: #3a3a3a !important;
 }

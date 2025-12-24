@@ -20,7 +20,7 @@ en: &DEFAULT_EN
   services:
     title: "Our Process"
     text: "Our three step process"
-    section: Process
+    section: services
     list:
       - title: "Collecting"
         desc: "Code Green is a Mississauga-based non-profit dedicated to environmental sustainability, offering free collection of e-waste from local schools and students for responsible recycling or strategic refurbishment."

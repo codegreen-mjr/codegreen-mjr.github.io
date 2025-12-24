@@ -3,65 +3,71 @@ body, body * {
   transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-/* --- LIGHT MODE (FRESH & READABLE) --- */
-body, .bg-light {
-  background-color: #f1f9f1 !important; 
-  color: #1b4332 !important; 
-}
-
-section, .bg-white, .page-section, div[class*="bg-white"] {
-  background-color: #d8f3dc !important; 
-  color: #1b4332 !important; 
-}
-
-h1, h2, h3, h4, h5, h6 {
-  color: #081c15 !important;
-}
-
-footer {
-  background-color: #b7e4c7 !important;
+/* --- LIGHT MODE (MINT & SAGE) --- */
+/* Shade 1: Light Mint (Body) */
+body:not(.dark-mode) {
+  background-color: #f1f9f1 !important;
   color: #1b4332 !important;
 }
 
-/* --- DARK MODE (SPECIFIC TEXT FLIP) --- */
-body.dark-mode,
-body.dark-mode section,
-body.dark-mode .bg-white,
-body.dark-mode .bg-light {
-  background-color: #121212 !important;
+/* Shade 2: Soft Sage (Sections) */
+body:not(.dark-mode) section, 
+body:not(.dark-mode) .bg-white, 
+body:not(.dark-mode) .page-section {
+  background-color: #d8f3dc !important;
+  color: #1b4332 !important;
 }
 
-/* Only flip the Main Text and Headings to White */
-body.dark-mode h1, 
-body.dark-mode h2, 
-body.dark-mode h3, 
-body.dark-mode h4, 
-body.dark-mode h5, 
-body.dark-mode h6,
-body.dark-mode p {
-  color: #ffffff !important;
+/* --- YOUR DARK MODE CODE (UNCHANGED) --- */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
 }
 
-/* We EXCLUDE the "text-muted" or "text-secondary" classes.
-   This ensures that if your template uses gray text classes, 
-   they stay gray and don't get forced to white.
-*/
-body.dark-mode .text-muted, 
-body.dark-mode .text-secondary {
-  /* No color change here so they stay gray */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+  color: #ffffff;
 }
 
-/* --- NAVBAR (CONSTANT DARK & TRANSPARENT) --- */
+body.dark-mode footer,
+body.dark-mode section {
+  background-color: #1e1e1e !important;
+  color: #e0e0e0 !important;
+}
+
+body.dark-mode .navbar {
+  background: transparent !important;
+  color: inherit !important;
+  transition: background 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+body.dark-mode .navbar.scrolled {
+  background: rgba(0, 0, 0, 0.85) !important;
+  backdrop-filter: saturate(120%) blur(6px);
+}
+
+body.dark-mode .portfolio-caption {
+  background-color: #2a2a2a !important;
+  color: #e0e0e0 !important;
+  border-color: #3a3a3a !important;
+}
+
+/* === NAVBAR TRANSPARENCY FIX === */
 .navbar {
   background: transparent !important;
-}
-
-.navbar .nav-link, 
-.navbar-brand {
-  color: #ffffff !important;
+  transition: background 0.3s ease, backdrop-filter 0.3s ease;
 }
 
 .navbar.scrolled {
-  background: #000000 !important;
-  backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.85) !important;
+  backdrop-filter: saturate(120%) blur(6px);
+}
+
+/* Ensure navbar links stay white to work with the black bar */
+.navbar .nav-link, .navbar-brand {
+  color: #ffffff !important;
 }

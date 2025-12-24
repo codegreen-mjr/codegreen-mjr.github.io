@@ -3,28 +3,28 @@ body, body * {
   transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-/* --- LIGHT MODE (CLEAN ECO-THEME) --- */
+/* --- LIGHT MODE (CLEAN & BRIGHT ECO-THEME) --- */
 
-/* Shade 1: Deep Teal-Green (Main Background) */
-body, .bg-light {
-  background-color: #1a3a32 !important; 
-  color: #ffffff !important;
+/* Shade 1: Very Light Mint Green (Main Background) */
+body {
+  background-color: #f1f8e9 !important; 
+  color: #1b5e20 !important; /* Dark green text for readability */
 }
 
-/* Shade 2: Fresh Forest Green (Sections / "White" areas) */
-/* This is slightly "brighter" than the body so it pops */
-section, .bg-white, .page-section {
-  background-color: #245045 !important; 
-  color: #ffffff !important;
+/* Shade 2: Bright Leaf Green (Sections) */
+/* This targets sections and common white background classes */
+section, 
+.bg-white, 
+.page-section,
+div[id="about"], 
+div[id="services"] {
+  background-color: #c5e1a5 !important; 
+  color: #1b5e20 !important;
 }
 
-/* Headings */
-h1, h2, h3, h4, h5, h6 {
-  color: #ffffff !important;
-}
-
+/* Footer (Stronger Green) */
 footer {
-  background-color: #132b25 !important; /* Darkest for the bottom */
+  background-color: #9ccc65 !important;
   color: #ffffff !important;
 }
 
@@ -48,7 +48,7 @@ body.dark-mode h1, body.dark-mode h2, body.dark-mode h3 {
   background: transparent !important;
 }
 
-/* Navbar text stays White always */
+/* Navbar text stays White */
 .navbar .nav-link, 
 .navbar-brand {
   color: #ffffff !important;

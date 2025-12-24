@@ -1,26 +1,29 @@
-/* --- LIGHT GREEN THEME (DEFAULT) --- */
+/* --- GLOBAL NAVBAR (ALWAYS DARK) --- */
+.navbar {
+  background-color: #1a1a1a !important; /* Dark Gray/Black */
+  color: #ffffff !important;
+  transition: background 0.3s ease;
+}
 
+/* Ensure links in navbar are always white */
+.navbar a, .navbar .nav-link {
+  color: #ffffff !important;
+}
+
+/* --- LIGHT MODE (E-WASTE LIGHT GREEN) --- */
 body {
-  background-color: #f0f9f0 !important; /* Very Light Mint Green */
-  color: #1b5e20;                      /* Dark Green Text */
+  background-color: #dcedc8 !important; /* Eco-Friendly Light Green */
+  color: #2e3436;                      /* Dark Tech-Gray text */
   transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-/* Sections and Footer in Light Green */
+/* Sections/Footer slightly darker green for contrast */
 footer, section {
-  background-color: #e8f5e9 !important; /* Slightly darker light green */
-  color: #1b5e20 !important;
+  background-color: #c5e1a5 !important; 
+  color: #2e3436 !important;
 }
 
-/* Project Boxes in Light Mode */
-.portfolio-caption {
-  background-color: #ffffff !important; 
-  border: 1px solid #c8e6c9 !important;
-}
-
-/* --- DARK MODE (STAYS BLACK/DARK) --- */
-
-/* When you click the button, it switches to these dark colors */
+/* --- DARK MODE (STAYS DARK) --- */
 body.dark-mode {
   background-color: #121212 !important;
   color: #e0e0e0 !important;
@@ -32,22 +35,14 @@ body.dark-mode section {
   color: #e0e0e0 !important;
 }
 
-body.dark-mode .portfolio-caption {
-  background-color: #2a2a2a !important;
-  color: #ffffff !important;
-}
-
-/* --- NAVBAR STUFF --- */
-.navbar {
-  background: transparent !important;
-  transition: background 0.3s ease;
-}
-
+/* --- SCRIPTS/UI FIXES --- */
+/* Keeps navbar black even when scrolling in green mode */
 .navbar.scrolled {
-  background: rgba(240, 249, 240, 0.9) !important; /* Matches Light Green */
-  backdrop-filter: blur(6px);
+  background: rgba(26, 26, 26, 0.95) !important;
+  backdrop-filter: blur(5px);
 }
 
-body.dark-mode .navbar.scrolled {
-  background: rgba(0, 0, 0, 0.85) !important; /* Matches Dark Mode */
+.portfolio-caption {
+  background-color: #ffffff !important;
+  border: 1px solid #aed581 !important;
 }

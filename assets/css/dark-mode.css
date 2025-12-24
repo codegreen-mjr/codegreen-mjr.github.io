@@ -5,15 +5,16 @@ body, body * {
 
 /* --- LIGHT MODE (E-WASTE THEME) --- */
 
-/* Shade 1: Very Light Mint (Body/Off-white areas) */
+/* Shade 1: Very Light Pale Sage (Replaces your Off-White) */
 body {
-  background-color: #f1f8e9; 
+  background-color: #f1f7e9; 
   color: #212121;
 }
 
-/* Shade 2: Earthy Green (Section/White areas) */
+/* Shade 2: Muted Moss Green (Replaces your Pure White) */
+/* We target 'section' and 'bg-white' specifically */
 section, .bg-white {
-  background-color: #c5e1a5 !important;
+  background-color: #d8e6c3 !important;
   color: #212121 !important;
 }
 
@@ -22,8 +23,7 @@ footer {
   color: #1b5e20 !important;
 }
 
-/* --- DARK MODE (RESTORED LOGIC) --- */
-/* We use body.dark-mode to ensure these override the light greens */
+/* --- DARK MODE (RESTORED & WORKING) --- */
 
 body.dark-mode {
   background-color: #121212 !important;
@@ -39,6 +39,7 @@ body.dark-mode h6 {
   color: #ffffff !important;
 }
 
+/* This forces sections to go dark when the button is clicked */
 body.dark-mode footer,
 body.dark-mode section,
 body.dark-mode .bg-white {
@@ -65,7 +66,7 @@ body.dark-mode .bg-white {
   backdrop-filter: saturate(120%) blur(6px);
 }
 
-/* Portfolio / project boxes in dark mode */
+/* Portfolio / project boxes */
 body.dark-mode .portfolio-caption {
   background-color: #2a2a2a !important;
   color: #e0e0e0 !important;

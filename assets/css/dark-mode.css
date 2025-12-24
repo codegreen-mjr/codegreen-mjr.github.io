@@ -5,15 +5,18 @@ body, body * {
 
 /* --- LIGHT MODE (E-WASTE THEME) --- */
 
-/* Shade 1: Very Light Pale Sage (Replaces your Off-White) */
+/* Shade 1: Very Light Mint (The background/off-white areas) */
 body {
-  background-color: #f1f7e9; 
-  color: #212121;
+  background-color: #f1f7e9 !important; 
+  color: #212121 !important;
 }
 
-/* Shade 2: Muted Moss Green (Replaces your Pure White) */
-/* We target 'section' and 'bg-white' specifically */
-section, .bg-white {
+/* Shade 2: Muted Earthy Green (This forces ALL sections and divs to be green) */
+section, 
+div[class*="bg-"], 
+.page-section, 
+.bg-white, 
+.bg-light {
   background-color: #d8e6c3 !important;
   color: #212121 !important;
 }
@@ -23,9 +26,14 @@ footer {
   color: #1b5e20 !important;
 }
 
-/* --- DARK MODE (RESTORED & WORKING) --- */
+/* --- DARK MODE (STAYS BLACK) --- */
 
-body.dark-mode {
+body.dark-mode,
+body.dark-mode section,
+body.dark-mode div[class*="bg-"],
+body.dark-mode .page-section,
+body.dark-mode .bg-white,
+body.dark-mode .bg-light {
   background-color: #121212 !important;
   color: #e0e0e0 !important;
 }
@@ -39,14 +47,6 @@ body.dark-mode h6 {
   color: #ffffff !important;
 }
 
-/* This forces sections to go dark when the button is clicked */
-body.dark-mode footer,
-body.dark-mode section,
-body.dark-mode .bg-white {
-  background-color: #1e1e1e !important;
-  color: #e0e0e0 !important;
-}
-
 /* --- NAVBAR (CONSTANT DARK & TRANSPARENT AT TOP) --- */
 
 .navbar {
@@ -54,13 +54,13 @@ body.dark-mode .bg-white {
   transition: background 0.3s ease, backdrop-filter 0.3s ease;
 }
 
-/* Navbar text stays White/Light Gray always */
+/* Navbar text stays White/Light Gray regardless of mode */
 .navbar .nav-link, 
 .navbar-brand {
   color: rgba(255, 255, 255, 0.9) !important;
 }
 
-/* Navbar turns Black only when scrolled */
+/* Navbar background ONLY when scrolled */
 .navbar.scrolled {
   background: rgba(0, 0, 0, 0.95) !important;
   backdrop-filter: saturate(120%) blur(6px);

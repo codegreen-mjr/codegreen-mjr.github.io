@@ -3,25 +3,31 @@ body, body * {
   transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-/* --- LIGHT MODE (NOW GREEN) --- */
+/* --- LIGHT MODE (E-WASTE THEME) --- */
+
+/* Main Background (The lighter "off-white" areas) */
 body {
-  background-color: #e1ecd1; /* Light Eco-Green */
+  background-color: #f1f8e9 !important; /* Very faint mint/white */
   color: #212121;
 }
 
-/* Footer and sections for Light Mode */
-footer, section {
-  background-color: #d4e3bc !important; /* Slightly darker green */
+/* The darker sections (The "white" areas now more Green) */
+section {
+  background-color: #dcedc8 !important; /* Distinctly Green */
   color: #212121 !important;
 }
 
-/* --- DARK MODE (STAYS DARK) --- */
+footer {
+  background-color: #c5e1a5 !important; /* Darkest green for the bottom */
+  color: #1b5e20 !important;
+}
+
+/* --- DARK MODE (STAYS BLACK) --- */
 body.dark-mode {
   background-color: #121212;
   color: #e0e0e0;
 }
 
-/* Headings in Dark Mode */
 body.dark-mode h1,
 body.dark-mode h2,
 body.dark-mode h3,
@@ -31,30 +37,37 @@ body.dark-mode h6 {
   color: #ffffff;
 }
 
-/* Footer and sections in Dark Mode */
 body.dark-mode footer,
 body.dark-mode section {
   background-color: #1e1e1e !important;
   color: #e0e0e0 !important;
 }
 
-/* --- NAVBAR (STAYS BLACK NO MATTER WHAT) --- */
-.navbar, 
-body.dark-mode .navbar {
-  background: #1a1a1a !important; /* Forced dark gray/black */
-  color: #ffffff !important;
+/* --- NAVBAR LOGIC (FIXED) --- */
+
+/* Keep it transparent at the top always */
+.navbar {
+  background: transparent !important;
+  transition: background 0.3s ease, backdrop-filter 0.3s ease;
 }
 
-/* Navbar when scrolled (Stays Black) */
-.navbar.scrolled,
-body.dark-mode .navbar.scrolled {
+/* Force it to Black ONLY when scrolled */
+.navbar.scrolled {
   background: rgba(0, 0, 0, 0.9) !important;
   backdrop-filter: saturate(120%) blur(6px);
 }
 
-/* Portfolio / project boxes in Dark Mode */
+/* Ensure navbar text is readable against the green/black */
+.navbar .nav-link {
+  color: #1b5e20 !important; /* Dark Green text for light mode */
+}
+body.dark-mode .navbar .nav-link {
+  color: #ffffff !important; /* White text for dark mode */
+}
+
+/* Portfolio / project boxes */
 body.dark-mode .portfolio-caption {
-  background-color: #2a2a2a !important; 
-  color: #e0e0e0 !important;            
-  border-color: #3a3a3a !important;     
+  background-color: #2a2a2a !important;
+  color: #e0e0e0 !important;
+  border-color: #3a3a3a !important;
 }

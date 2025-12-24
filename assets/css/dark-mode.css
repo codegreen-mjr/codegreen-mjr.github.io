@@ -3,38 +3,36 @@ body, body * {
   transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-/* --- LIGHT MODE (ULTRA LIGHT ECO THEME) --- */
+/* --- LIGHT MODE (CLEAN TECH-GREEN THEME) --- */
 
-/* Shade 1: Ultra Light Mint (The main background) */
+/* Shade 1: Deep Emerald (The "Off-White" / Body replacement) */
 body {
-  background-color: #f1fbf0 !important; 
+  background-color: #2d5a4c !important; 
+  color: #ffffff !important;
 }
 
-/* Shade 2: Light Lime (The sections/white areas) */
-/* We target every possible container to make sure they change */
+/* Shade 2: Clean Pine (The "White" / Section replacement) */
+/* This is slightly darker/richer so you get that two-tone look */
 section, 
 .bg-white, 
-.bg-light,
 .page-section,
-div[class*="bg-"] {
-  background-color: #e2f3d5 !important; 
+div[class*="bg-white"] {
+  background-color: #1e3f35 !important; 
+  color: #ffffff !important;
 }
 
-/* FORCED WHITE TEXT (As requested) */
-body:not(.dark-mode), 
-body:not(.dark-mode) p, 
+/* Ensure all text headers and paragraphs are Pure White */
 body:not(.dark-mode) h1, 
 body:not(.dark-mode) h2, 
 body:not(.dark-mode) h3, 
-body:not(.dark-mode) h4,
-body:not(.dark-mode) span,
-body:not(.dark-mode) div {
+body:not(.dark-mode) h4, 
+body:not(.dark-mode) p,
+body:not(.dark-mode) .nav-link {
   color: #ffffff !important;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Subtle shadow so white text is readable on light green */
 }
 
 footer {
-  background-color: #c8e6c9 !important;
+  background-color: #142b24 !important;
 }
 
 /* --- DARK MODE (STAYS BLACK) --- */
@@ -42,20 +40,16 @@ footer {
 body.dark-mode,
 body.dark-mode section,
 body.dark-mode .bg-white,
-body.dark-mode .bg-light,
-body.dark-mode div[class*="bg-"] {
+body.dark-mode .bg-light {
   background-color: #121212 !important;
   color: #e0e0e0 !important;
 }
 
-body.dark-mode h1, body.dark-mode h2, body.dark-mode h3 {
-  color: #ffffff !important;
-}
-
-/* --- NAVBAR (CONSTANT DARK & TRANSPARENT) --- */
+/* --- NAVBAR (CONSTANT DARK & TRANSPARENT AT TOP) --- */
 
 .navbar {
   background: transparent !important;
+  transition: background 0.3s ease;
 }
 
 /* Navbar text stays White */
@@ -64,7 +58,7 @@ body.dark-mode h1, body.dark-mode h2, body.dark-mode h3 {
   color: #ffffff !important;
 }
 
-/* Navbar background ONLY when scrolled */
+/* Navbar turns Black only when scrolled */
 .navbar.scrolled {
   background: #000000 !important;
   backdrop-filter: blur(8px);

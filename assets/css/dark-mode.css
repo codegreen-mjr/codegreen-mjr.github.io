@@ -3,52 +3,71 @@ body, body * {
   transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-/* --- YOUR DARK MODE CORE (Reverted Text) --- */
+/* --- LIGHT MODE: DARK GREEN HIERARCHY --- */
+body:not(.dark-mode) {
+  color: #1b4332 !important; /* Main Green Text */
+}
+
+/* All Headings in Light Mode */
+body:not(.dark-mode) h1, body:not(.dark-mode) h2, 
+body:not(.dark-mode) h3, body:not(.dark-mode) h4, 
+body:not(.dark-mode) h5, body:not(.dark-mode) h6,
+body:not(.dark-mode) .section-heading {
+  color: #081c15 !important; /* Powerful Dark Green */
+}
+
+/* Muted/Secondary Text in Light Mode */
+body:not(.dark-mode) .text-muted, 
+body:not(.dark-mode) .section-subheading,
+body:not(.dark-mode) p.text-muted {
+  color: #52796f !important; /* Muted Green (Less Powerful) */
+}
+
+/* --- DARK MODE: LIGHT GREEN HIERARCHY --- */
 body.dark-mode {
-  background-color: #121212;
-  color: #e0e0e0; /* Standard readable gray-white */
+  background-color: #121212 !important;
+  color: #95d5b2 !important; /* Main Light Green Text */
 }
 
-body.dark-mode h1,
-body.dark-mode h2,
-body.dark-mode h3,
-body.dark-mode h4,
-body.dark-mode h5,
-body.dark-mode h6 {
-  color: #ffffff;
+/* All Headings in Dark Mode */
+body.dark-mode h1, body.dark-mode h2, 
+body.dark-mode h3, body.dark-mode h4, 
+body.dark-mode h5, body.dark-mode h6,
+body.dark-mode .section-heading {
+  color: #d8f3dc !important; /* Brightest Green for Titles */
 }
 
-/* Footer and sections */
-body.dark-mode footer,
-body.dark-mode section {
-  background-color: #1e1e1e !important;
-  color: #e0e0e0 !important;
+/* Muted/Secondary Text in Dark Mode */
+body.dark-mode .text-muted, 
+body.dark-mode .section-subheading,
+body.dark-mode p.text-muted {
+  color: #4f772d !important; /* Darker Green (Less Powerful) */
 }
 
 /* --- THE ICON INTERIOR FIX --- */
-/* This makes sure the icon inside the circle turns black in Dark Mode */
+/* Interior of icons turns BLACK in Dark Mode */
 body.dark-mode .fa-stack-1x.fa-inverse {
   color: #000000 !important;
 }
 
-/* --- PORTFOLIO & NAVBAR --- */
+/* --- SECTIONS & UI --- */
+body.dark-mode footer,
+body.dark-mode section {
+  background-color: #1e1e1e !important;
+}
+
 body.dark-mode .portfolio-caption {
   background-color: #2a2a2a !important;
-  color: #e0e0e0 !important;
   border-color: #3a3a3a !important;
 }
 
-.navbar {
-  background: transparent !important;
-  transition: background 0.3s ease, backdrop-filter 0.3s ease;
+/* --- NAVBAR (STAYS WHITE FOR READABILITY) --- */
+.navbar .nav-link, .navbar-brand {
+  color: #ffffff !important;
 }
 
 .navbar.scrolled, 
 body.dark-mode .navbar.scrolled {
   background: rgba(0, 0, 0, 0.85) !important;
   backdrop-filter: saturate(120%) blur(6px);
-}
-
-.navbar .nav-link, .navbar-brand {
-  color: #ffffff !important;
 }

@@ -21,10 +21,10 @@ document.addEventListener("DOMContentLoaded", function() {
     });
     document.body.appendChild(btn);
 
-    // === NEW CONSOLIDATED LOGO SETUP ===
+    // === NEW CONSOLIDATED CORNER LOGO ===
     const logo = document.createElement("img");
     logo.id = "site-logo";
-    logo.src = "/assets/img/CodeGreen.png"; // Using your new image
+    logo.src = "/assets/img/CodeGreen.png"; 
     logo.alt = "Code Green Logo";
 
     logo.addEventListener("click", () => {
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function() {
       zIndex: "10002",
       display: "block",
       transformOrigin: "center center",
-      backfaceVisibility: "visible" // Needed for 3D flip
+      backfaceVisibility: "visible"
     });
     document.body.appendChild(logo);
 
@@ -52,16 +52,32 @@ document.addEventListener("DOMContentLoaded", function() {
         transition: background-color 0.4s ease, color 0.4s ease !important;
       }
       #site-logo {
-        perspective: 1000px; /* Gives the 3D depth effect */
+        perspective: 1000px;
       }
     `;
     document.head.appendChild(style);
 
-    // === DARK MODE LOGIC (Logo swap removed) ===
+    // === TIMELINE IMAGE LOGIC (RESTORED) ===
+    const timelineImgs = document.querySelectorAll(".timeline-image img");
+    
+    function updateTimelineImages() {
+      const isDark = document.body.classList.contains("dark-mode");
+      timelineImgs.forEach(img => {
+        // If it's currently showing LightLogo, swap to DarkLogo and vice versa
+        if (isDark) {
+          img.src = img.src.replace("LightLogo.png", "DarkLogo.png");
+        } else {
+          img.src = img.src.replace("DarkLogo.png", "LightLogo.png");
+        }
+      });
+    }
+
+    // === DARK MODE LOGIC ===
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme === "dark") {
       document.body.classList.add("dark-mode");
       btn.src = lightIcon;
+      updateTimelineImages(); // Update timeline on load
     }
 
     btn.addEventListener("click", () => {
@@ -69,11 +85,13 @@ document.addEventListener("DOMContentLoaded", function() {
       const dark = document.body.classList.contains("dark-mode");
       localStorage.setItem("theme", dark ? "dark" : "light");
       btn.src = dark ? lightIcon : darkIcon;
+      updateTimelineImages(); // Update timeline on toggle
     });
 
     if (!savedTheme && window.matchMedia("(prefers-color-scheme: dark)").matches) {
       document.body.classList.add("dark-mode");
       btn.src = lightIcon;
+      updateTimelineImages();
     }
 
     // === 3D LOGO FLIP ANIMATION ===
@@ -83,19 +101,17 @@ document.addEventListener("DOMContentLoaded", function() {
       spinning = true;
 
       let start = null;
-      const duration = 1500; // 1.5s for a snappy flip
+      const duration = 1500;
 
       function animate(timestamp) {
         if (!start) start = timestamp;
         let elapsed = timestamp - start;
         let t = Math.min(elapsed / duration, 1);
 
-        // Exponential ease in/out
         const eased = t < 0.5
           ? 4 * t * t * t
           : 1 - Math.pow(-2 * t + 2, 3) / 2;
 
-        // rotateY(360deg) makes it flip around horizontally like a 3D object
         logo.style.transform = `rotateY(${360 * eased}deg)`;
 
         if (elapsed < duration) {
@@ -105,16 +121,7 @@ document.addEventListener("DOMContentLoaded", function() {
           spinning = false;
         }
       }
-
       requestAnimationFrame(animate);
-    });
-
-    // === TIMELINE IMAGE LOGIC (Cleaned up) ===
-    document.querySelectorAll(".timeline-image img").forEach(img => {
-      img.style.width = "100%";
-      img.style.height = "100%";
-      img.style.objectFit = "cover";
-      img.style.display = "block";
     });
 
     // === NAVBAR SCROLL / DYNAMIC LOGO RESIZE ===
@@ -126,16 +133,13 @@ document.addEventListener("DOMContentLoaded", function() {
         } else {
           navbar.classList.remove("scrolled");
         }
-
         const navbarHeight = navbar.offsetHeight;
         logo.style.height = Math.round(navbarHeight * 0.85) + "px";
         logo.style.width = "auto";
       }
-
       updateNavbar();
       window.addEventListener("resize", updateNavbar);
       window.addEventListener("scroll", updateNavbar);
     }
-
   }, 100);
 });

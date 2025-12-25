@@ -3,49 +3,54 @@ body, body * {
   transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-/* --- LIGHT MODE: DARK GREEN HIERARCHY --- */
+/* --- LIGHT MODE: GREEN HIERARCHY --- */
 body:not(.dark-mode) {
-  color: #1b4332 !important; /* Main Green Text */
+  color: #2d6a4f !important; /* Standard Body Text (Readable Green) */
 }
 
-/* All Headings in Light Mode */
-body:not(.dark-mode) h1, body:not(.dark-mode) h2, 
-body:not(.dark-mode) h3, body:not(.dark-mode) h4, 
-body:not(.dark-mode) h5, body:not(.dark-mode) h6,
-body:not(.dark-mode) .section-heading {
-  color: #081c15 !important; /* Powerful Dark Green */
+/* POWERFUL TITLES (Dark & Bold) */
+body:not(.dark-mode) h1, 
+body:not(.dark-mode) h2, 
+body:not(.dark-mode) h3, 
+body:not(.dark-mode) h4, 
+body:not(.dark-mode) .section-heading,
+body:not(.dark-mode) .service-heading {
+  color: #081c15 !important; /* Most powerful dark green */
+  font-weight: 700;
 }
 
-/* Muted/Secondary Text in Light Mode */
+/* LESS POWERFUL TEXT (Subheadings/Muted) */
 body:not(.dark-mode) .text-muted, 
 body:not(.dark-mode) .section-subheading,
 body:not(.dark-mode) p.text-muted {
-  color: #52796f !important; /* Muted Green (Less Powerful) */
+  color: #74a08e !important; /* A "Clean" muted green - not gray, but not distracting */
 }
 
-/* --- DARK MODE: LIGHT GREEN HIERARCHY --- */
+/* --- DARK MODE: GREEN HIERARCHY --- */
 body.dark-mode {
   background-color: #121212 !important;
-  color: #95d5b2 !important; /* Main Light Green Text */
+  color: #95d5b2 !important; /* Standard Light Green Text */
 }
 
-/* All Headings in Dark Mode */
-body.dark-mode h1, body.dark-mode h2, 
-body.dark-mode h3, body.dark-mode h4, 
-body.dark-mode h5, body.dark-mode h6,
-body.dark-mode .section-heading {
-  color: #d8f3dc !important; /* Brightest Green for Titles */
+/* POWERFUL TITLES (Bright & Bold) */
+body.dark-mode h1, 
+body.dark-mode h2, 
+body.dark-mode h3, 
+body.dark-mode h4,
+body.dark-mode .section-heading,
+body.dark-mode .service-heading {
+  color: #d8f3dc !important; /* Brightest Mint Green */
 }
 
-/* Muted/Secondary Text in Dark Mode */
+/* LESS POWERFUL TEXT in Dark Mode */
 body.dark-mode .text-muted, 
 body.dark-mode .section-subheading,
 body.dark-mode p.text-muted {
-  color: #4f772d !important; /* Darker Green (Less Powerful) */
+  color: #40916c !important; /* A darker, "recessed" green */
 }
 
 /* --- THE ICON INTERIOR FIX --- */
-/* Interior of icons turns BLACK in Dark Mode */
+/* Interior of icons (school, chip, heart) turns BLACK in Dark Mode */
 body.dark-mode .fa-stack-1x.fa-inverse {
   color: #000000 !important;
 }
@@ -61,7 +66,7 @@ body.dark-mode .portfolio-caption {
   border-color: #3a3a3a !important;
 }
 
-/* --- NAVBAR (STAYS WHITE FOR READABILITY) --- */
+/* --- NAVBAR --- */
 .navbar .nav-link, .navbar-brand {
   color: #ffffff !important;
 }

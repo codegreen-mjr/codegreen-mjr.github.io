@@ -1,11 +1,15 @@
-/* Smooth transition for everything */
+/* --- UNIVERSAL SMOOTH TRANSITION --- */
 body, body * {
   transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 /* --- LIGHT MODE (GREEN BRANDING) --- */
-body:not(.dark-mode) {
-  color: #1b4332 !important; /* Dense, dark green for main text */
+/* Target everything: paragraphs, spans, and headings */
+body:not(.dark-mode),
+body:not(.dark-mode) p,
+body:not(.dark-mode) span,
+body:not(.dark-mode) .service-heading {
+  color: #1b4332 !important; 
 }
 
 body:not(.dark-mode) h1, 
@@ -14,55 +18,68 @@ body:not(.dark-mode) h3,
 body:not(.dark-mode) h4, 
 body:not(.dark-mode) h5, 
 body:not(.dark-mode) h6 {
-  color: #081c15 !important; /* Most powerful dark green for titles */
+  color: #081c15 !important; /* Powerful Dark Green */
 }
 
-/* Less powerful/Secondary text in Light Mode */
+/* Secondary/Less Powerful Text (Subheadings/Muted) */
 body:not(.dark-mode) .text-muted, 
-body:not(.dark-mode) p.text-muted, 
 body:not(.dark-mode) .section-subheading {
-  color: #52796f !important; /* Muted sage green (less powerful) */
+  color: #52796f !important; /* Muted Sage */
 }
 
-/* Light Mode Icons */
-#services .fa-stack-2x.text-primary {
-  color: #2d6a4f !important; /* Green circles */
+/* Icons in Light Mode */
+.fa-stack-2x.text-primary {
+  color: #2d6a4f !important; /* Green Circle */
+}
+.fa-stack-1x.fa-inverse {
+  color: #ffffff !important; /* White Icon Interior */
 }
 
-/* --- DARK MODE (NEON/MINT BRANDING) --- */
+/* --- DARK MODE (MINT BRANDING) --- */
 body.dark-mode {
   background-color: #121212 !important;
-  color: #95d5b2 !important; /* Light green for main text */
 }
 
+/* All standard text and paragraphs in Dark Mode */
+body.dark-mode,
+body.dark-mode p,
+body.dark-mode span,
+body.dark-mode li {
+  color: #95d5b2 !important; /* Light Green */
+}
+
+/* Powerful Titles in Dark Mode */
 body.dark-mode h1,
 body.dark-mode h2,
 body.dark-mode h3,
 body.dark-mode h4,
 body.dark-mode h5,
-body.dark-mode h6 {
-  color: #d8f3dc !important; /* Brightest/Most powerful green for titles */
+body.dark-mode h6,
+body.dark-mode .service-heading {
+  color: #d8f3dc !important; /* Bright Mint */
 }
 
-/* Less powerful/Secondary text in Dark Mode */
+/* Secondary/Less Powerful Text in Dark Mode */
 body.dark-mode .text-muted, 
-body.dark-mode .section-subheading,
-body.dark-mode p {
-  color: #74c69d !important; /* Softer green (less powerful) */
+body.dark-mode .section-subheading {
+  color: #4f772d !important; /* Darker Green (Less powerful) */
 }
 
-/* THE ICON INTERIOR FIX: Turn white icons to BLACK in Dark Mode */
+/* THE ICON FLIP: Black Icon inside Green Circle */
+body.dark-mode .fa-stack-2x.text-primary {
+  color: #52b788 !important; /* Bright Green Circle */
+}
 body.dark-mode .fa-stack-1x.fa-inverse {
-  color: #000000 !important;
+  color: #000000 !important; /* ICON TURNS BLACK */
 }
 
-/* Dark Mode Backgrounds */
-body.dark-mode footer,
-body.dark-mode section {
+/* Dark Mode Section Backgrounds */
+body.dark-mode section,
+body.dark-mode footer {
   background-color: #1e1e1e !important;
 }
 
-/* Dark Mode Project Boxes */
+/* Portfolio/Project Boxes */
 body.dark-mode .portfolio-caption {
   background-color: #2a2a2a !important;
   border-color: #3a3a3a !important;
@@ -72,12 +89,10 @@ body.dark-mode .portfolio-caption {
 .navbar {
   background: transparent !important;
 }
-
 .navbar .nav-link, 
 .navbar-brand {
   color: #ffffff !important;
 }
-
 .navbar.scrolled {
   background: rgba(0, 0, 0, 0.85) !important;
   backdrop-filter: saturate(120%) blur(6px);

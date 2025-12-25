@@ -24,13 +24,13 @@ en: &DEFAULT_EN
     list:
       - title: "Collecting"
         desc: "Code Green is a Mississauga-based non-profit dedicated to environmental sustainability, offering free collection of e-waste from local schools and students for responsible recycling or strategic refurbishment."
-        icon: "fas fa-school text-success" #find more at https://fontawesome.com/icons
+        icon: "fas fa-school fa-stack-1x fa-inverse\" /><i class=\"fas fa-circle fa-stack-2x text-success" #find more at https://fontawesome.com/icons
       - title: "Distributing"
         desc: "After collecting from schools we give the e-waste to local e-waste centers for a small sum"
-        icon: "fas fa-microchip text-success"
+        icon: "fas fa-microchip fa-stack-1x fa-inverse\" /><i class=\"fas fa-circle fa-stack-2x text-success"
       - title: "Donating"
         desc: "All revenue made by Code Green will be donated to charity"
-        icon: "fas fa-hand-holding-heart text-success"
+        icon: "fas fa-hand-holding-heart fa-stack-1x fa-inverse\" /><i class=\"fas fa-circle fa-stack-2x text-success"
 
   portfolio:
     title: "Partnered Schools (Coming Soon...)"

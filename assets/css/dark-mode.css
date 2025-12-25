@@ -3,27 +3,13 @@ body, body * {
   transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-/* --- LIGHT MODE (MINT & SAGE) --- */
-/* Shade 1: Light Mint (Body) */
-body:not(.dark-mode) {
-  background-color: #f1f9f1 !important;
-  color: #1b4332 !important;
-}
-
-/* Shade 2: Soft Sage (Sections) */
-body:not(.dark-mode) section, 
-body:not(.dark-mode) .bg-white, 
-body:not(.dark-mode) .page-section {
-  background-color: #d8f3dc !important;
-  color: #1b4332 !important;
-}
-
-/* --- YOUR DARK MODE CODE (UNCHANGED) --- */
+/* General dark mode styles */
 body.dark-mode {
   background-color: #121212;
   color: #e0e0e0;
 }
 
+/* Headings */
 body.dark-mode h1,
 body.dark-mode h2,
 body.dark-mode h3,
@@ -33,28 +19,35 @@ body.dark-mode h6 {
   color: #ffffff;
 }
 
+/* Footer and sections only (leave navbar unchanged) */
 body.dark-mode footer,
 body.dark-mode section {
   background-color: #1e1e1e !important;
   color: #e0e0e0 !important;
 }
 
+/* Navbar color in dark mode */
 body.dark-mode .navbar {
-  background: transparent !important;
+  background: transparent !important; /* allow transparency at top */
   color: inherit !important;
   transition: background 0.3s ease, backdrop-filter 0.3s ease;
 }
 
+/* Solid background when scrolled */
 body.dark-mode .navbar.scrolled {
   background: rgba(0, 0, 0, 0.85) !important;
   backdrop-filter: saturate(120%) blur(6px);
 }
 
+
+
+/* Portfolio / project boxes */
 body.dark-mode .portfolio-caption {
-  background-color: #2a2a2a !important;
-  color: #e0e0e0 !important;
-  border-color: #3a3a3a !important;
+  background-color: #2a2a2a !important; /* dark gray, stands out from background */
+  color: #e0e0e0 !important;           /* readable text */
+  border-color: #3a3a3a !important;     /* slightly lighter border for contrast */
 }
+
 
 /* === NAVBAR TRANSPARENCY FIX === */
 .navbar {
@@ -65,9 +58,4 @@ body.dark-mode .portfolio-caption {
 .navbar.scrolled {
   background: rgba(0, 0, 0, 0.85) !important;
   backdrop-filter: saturate(120%) blur(6px);
-}
-
-/* Ensure navbar links stay white to work with the black bar */
-.navbar .nav-link, .navbar-brand {
-  color: #ffffff !important;
 }

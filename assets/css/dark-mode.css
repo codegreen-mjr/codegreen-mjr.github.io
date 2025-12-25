@@ -4,58 +4,63 @@ body, body * {
 }
 
 /* --- LIGHT MODE: GREEN HIERARCHY --- */
-body:not(.dark-mode) {
-  color: #2d6a4f !important; /* Standard Body Text (Readable Green) */
+body:not(.dark-mode), 
+body:not(.dark-mode) p, 
+body:not(.dark-mode) span,
+body:not(.dark-mode) div {
+  color: #2d6a4f !important; /* Standard Body Green */
 }
 
-/* POWERFUL TITLES (Dark & Bold) */
-body:not(.dark-mode) h1, 
-body:not(.dark-mode) h2, 
-body:not(.dark-mode) h3, 
-body:not(.dark-mode) h4, 
-body:not(.dark-mode) .section-heading,
-body:not(.dark-mode) .service-heading {
-  color: #081c15 !important; /* Most powerful dark green */
-  font-weight: 700;
+/* POWERFUL TITLES (Light Mode) */
+body:not(.dark-mode) h1, body:not(.dark-mode) h2, 
+body:not(.dark-mode) h3, body:not(.dark-mode) h4,
+body:not(.dark-mode) .section-heading, 
+body:not(.dark-mode) .service-heading,
+body:not(.dark-mode) a:not(.btn) {
+  color: #081c15 !important; /* Boldest Forest Green */
 }
 
-/* LESS POWERFUL TEXT (Subheadings/Muted) */
+/* LESS POWERFUL TEXT (Light Mode) */
 body:not(.dark-mode) .text-muted, 
-body:not(.dark-mode) .section-subheading,
-body:not(.dark-mode) p.text-muted {
-  color: #74a08e !important; /* A "Clean" muted green - not gray, but not distracting */
+body:not(.dark-mode) .section-subheading {
+  color: #74a08e !important; /* Clean Muted Green */
 }
 
-/* --- DARK MODE: GREEN HIERARCHY --- */
+/* --- DARK MODE: TOTAL GREEN FORCE --- */
 body.dark-mode {
   background-color: #121212 !important;
-  color: #95d5b2 !important; /* Standard Light Green Text */
 }
 
-/* POWERFUL TITLES (Bright & Bold) */
-body.dark-mode h1, 
-body.dark-mode h2, 
-body.dark-mode h3, 
-body.dark-mode h4,
-body.dark-mode .section-heading,
+/* This forces ALL text (links, paragraphs, spans, list items) to Green */
+body.dark-mode, 
+body.dark-mode p, 
+body.dark-mode span, 
+body.dark-mode div, 
+body.dark-mode li, 
+body.dark-mode a:not(.btn) {
+  color: #95d5b2 !important; /* The main Light Green */
+}
+
+/* POWERFUL TITLES (Dark Mode) */
+body.dark-mode h1, body.dark-mode h2, 
+body.dark-mode h3, body.dark-mode h4,
+body.dark-mode .section-heading, 
 body.dark-mode .service-heading {
   color: #d8f3dc !important; /* Brightest Mint Green */
 }
 
-/* LESS POWERFUL TEXT in Dark Mode */
+/* LESS POWERFUL TEXT (Dark Mode) */
 body.dark-mode .text-muted, 
-body.dark-mode .section-subheading,
-body.dark-mode p.text-muted {
-  color: #40916c !important; /* A darker, "recessed" green */
+body.dark-mode .section-subheading {
+  color: #40916c !important; /* Darker "Recessed" Green */
 }
 
-/* --- THE ICON INTERIOR FIX --- */
-/* Interior of icons (school, chip, heart) turns BLACK in Dark Mode */
+/* --- ICON & UI LOGIC --- */
+/* Interior of icons turn BLACK in Dark Mode */
 body.dark-mode .fa-stack-1x.fa-inverse {
   color: #000000 !important;
 }
 
-/* --- SECTIONS & UI --- */
 body.dark-mode footer,
 body.dark-mode section {
   background-color: #1e1e1e !important;
@@ -66,7 +71,7 @@ body.dark-mode .portfolio-caption {
   border-color: #3a3a3a !important;
 }
 
-/* --- NAVBAR --- */
+/* --- NAVBAR (STAYS WHITE) --- */
 .navbar .nav-link, .navbar-brand {
   color: #ffffff !important;
 }

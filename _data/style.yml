@@ -1,7 +1,7 @@
 #Color Customization
-#highlight: "#54bfff"
-#white: "#FF0000"
-#black: "#000"
+highlight: "#2d6a4f"  # This is your Green for Icons/Buttons
+white: "#ffffff"      # Keep this pure white
+black: "#121212"      # This is your main Dark Mode background color
 
 #Image Customization
 header-image: "../img/header-bg.jpg"

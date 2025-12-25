@@ -3,13 +3,25 @@ body, body * {
   transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-/* General dark mode styles */
+/* --- LIGHT MODE GREEN TEXT & ICONS --- */
+/* This makes the "Our Process" headings/text green in Light Mode */
+#services h2.section-heading,
+#services h3.section-subheading,
+#services .text-muted {
+  color: #1b4332 !important; 
+}
+
+/* This turns the yellow icon circles into Green circles */
+#services .fa-stack-2x.text-primary {
+  color: #2d6a4f !important;
+}
+
+/* --- YOUR DARK MODE CODE (UNCHANGED) --- */
 body.dark-mode {
   background-color: #121212;
   color: #e0e0e0;
 }
 
-/* Headings */
 body.dark-mode h1,
 body.dark-mode h2,
 body.dark-mode h3,
@@ -19,35 +31,34 @@ body.dark-mode h6 {
   color: #ffffff;
 }
 
-/* Footer and sections only (leave navbar unchanged) */
+/* In Dark Mode, we make sure the "Our Process" subtext stays readable gray */
+body.dark-mode #services h3.section-subheading,
+body.dark-mode #services .text-muted {
+  color: #a0a0a0 !important;
+}
+
 body.dark-mode footer,
 body.dark-mode section {
   background-color: #1e1e1e !important;
   color: #e0e0e0 !important;
 }
 
-/* Navbar color in dark mode */
 body.dark-mode .navbar {
-  background: transparent !important; /* allow transparency at top */
+  background: transparent !important;
   color: inherit !important;
   transition: background 0.3s ease, backdrop-filter 0.3s ease;
 }
 
-/* Solid background when scrolled */
 body.dark-mode .navbar.scrolled {
   background: rgba(0, 0, 0, 0.85) !important;
   backdrop-filter: saturate(120%) blur(6px);
 }
 
-
-
-/* Portfolio / project boxes */
 body.dark-mode .portfolio-caption {
-  background-color: #2a2a2a !important; /* dark gray, stands out from background */
-  color: #e0e0e0 !important;           /* readable text */
-  border-color: #3a3a3a !important;     /* slightly lighter border for contrast */
+  background-color: #2a2a2a !important;
+  color: #e0e0e0 !important;
+  border-color: #3a3a3a !important;
 }
-
 
 /* === NAVBAR TRANSPARENCY FIX === */
 .navbar {
@@ -58,4 +69,9 @@ body.dark-mode .portfolio-caption {
 .navbar.scrolled {
   background: rgba(0, 0, 0, 0.85) !important;
   backdrop-filter: saturate(120%) blur(6px);
+}
+
+/* Ensure navbar links are visible */
+.navbar .nav-link, .navbar-brand {
+  color: #ffffff !important;
 }

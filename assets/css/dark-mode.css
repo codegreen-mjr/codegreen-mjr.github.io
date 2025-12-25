@@ -9,25 +9,24 @@ body:not(.dark-mode) p,
 body:not(.dark-mode) span,
 body:not(.dark-mode) div,
 body:not(.dark-mode) li {
-  color: #2d6a4f !important; /* Main Green Text */
+  color: #2d6a4f !important; 
 }
 
 /* POWERFUL TITLES (Light Mode) */
-body:not(.dark-mode) h1, body:not(.dark-mode) h2, 
-body:not(.dark-mode) h3, body:not(.dark-mode) h4, 
-body:not(.dark-mode) h5, body:not(.dark-mode) h6,
+body:not(.dark-mode) h1, 
+body:not(.dark-mode) h2, 
+body:not(.dark-mode) h3, 
 body:not(.dark-mode) .section-heading, 
-body:not(.dark-mode) .service-heading,
-body:not(.dark-mode) .display-1, 
-body:not(.dark-mode) .display-2, 
-body:not(.dark-mode) .display-3, 
-body:not(.dark-mode) .display-4 {
+body:not(.dark-mode) .page-section h2.section-heading,
+body:not(.dark-mode) .display-1,
+body:not(.dark-mode) .service-heading {
   color: #081c15 !important; /* Boldest Forest Green */
 }
 
 /* LESS POWERFUL TEXT (Light Mode) */
 body:not(.dark-mode) .text-muted, 
-body:not(.dark-mode) .section-subheading {
+body:not(.dark-mode) .section-subheading,
+body:not(.dark-mode) .page-section h3.section-subheading {
   color: #74a08e !important; /* Clean Muted Green */
 }
 
@@ -46,24 +45,23 @@ body.dark-mode a:not(.btn) {
   color: #95d5b2 !important;
 }
 
-/* POWERFUL TITLES (Dark Mode) - This targets EVERY heading type */
-body.dark-mode h1, body.dark-mode h2, 
-body.dark-mode h3, body.dark-mode h4, 
-body.dark-mode h5, body.dark-mode h6,
+/* POWERFUL TITLES (Dark Mode) */
+body.dark-mode h1, 
+body.dark-mode h2, 
+body.dark-mode h3, 
 body.dark-mode .section-heading, 
+body.dark-mode .page-section h2.section-heading,
+body.dark-mode .display-1,
 body.dark-mode .service-heading,
-body.dark-mode .display-1, 
-body.dark-mode .display-2, 
-body.dark-mode .display-3, 
-body.dark-mode .display-4,
 body.dark-mode .portfolio-caption h4 {
   color: #d8f3dc !important; /* Brightest Mint Green */
 }
 
 /* LESS POWERFUL TEXT (Dark Mode) */
 body.dark-mode .text-muted, 
-body.dark-mode .section-subheading {
-  color: #40916c !important; /* Darker "Recessed" Green */
+body.dark-mode .section-subheading,
+body.dark-mode .page-section h3.section-subheading {
+  color: #40916c !important; /* Darker Green (Less powerful) */
 }
 
 /* --- ICON & UI LOGIC --- */
